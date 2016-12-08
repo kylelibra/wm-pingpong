@@ -1,23 +1,4 @@
-<div class="row-fluid">
 
-
-	<div class='col-md-6'>
-		<div class='well'>
-			<h2>Players</h2>
-			<%= link_to "New Player", new_player_path, class: "btn-primary" %>
-
-			<ul id='players-list'>
-				<% @players.each do |player| %>
-					<li>
-					<%= link_to player_path(player) do %>
-						<%= image_tag(gravatar_url(player, size: 24)) %>
-						<%= player.name %>
-					<% end %>
-					</li>
-				<% end %>
-			</ul>
-		</div>
-	</div>
 
 <style>
 .demo-card-square.mdl-card {
@@ -77,7 +58,7 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Add Scores
+      Add Players
     </a>
   </div>
 </div>
@@ -87,7 +68,26 @@
 </div>
 
 
+<div class="row-fluid">
 
+
+	<div class='col-md-6'>
+		<div class='well'>
+			<h2>Players</h2>
+			<%= link_to "New Player", new_player_path, class: "btn-primary" %>
+
+			<ul id='players-list'>
+				<% @players.each do |player| %>
+					<li>
+					<%= link_to player_path(player) do %>
+						<%= image_tag(gravatar_url(player, size: 24)) %>
+						<%= player.name %>
+					<% end %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 
 
 	<div class='col-md-6'>
