@@ -1,15 +1,40 @@
 <div class="container">
-    <h1><%= @game.name %></h1>
+    <h1><%= @game.name %></h1><%= link_to 'Edit', edit_game_path(@game), class: "btn btn-warning btn-small" %>
 
   <section class="action-buttons">
-    <%= link_to 'Edit', edit_game_path(@game), class: "btn" %>
+    
     <% if @game.results.empty? %>
       <%= link_to "Delete", game_path(@game), method: :delete, confirm: "Are you sure?", class: "btn btn-danger btn-small" %>
     <% end %>
   </section>
 
   <div class="row-fluid">
-    <div class="span8">
+
+
+      <div class="col-md-6">
+        <h2>Player Ladder</h2>
+        <table id='ratings'>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>ELO Rating</th>
+              <th>W</th>
+              <th>L</th>
+              <% if @game.allow_ties %>
+                  <th>T</th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
+          </tbody>
+        </table>
+        <%= link_to "View All", game_ratings_path(@game) %>
+      </div>
+    </div>
+
+  
+    <div class="col-md-6">
       <h2>Recent Results</h2> <%= link_to "Add Score", new_game_result_path(@game), class: "btn btn-primary btn-small" %>
       
 
@@ -21,27 +46,6 @@
 
     </div>
 
-    <div class="span4">
-      <h2>Player Ladder</h2>
-      <table id='ratings'>
-        <thead>
-          <tr>
-            <th>Player</th>
-            <th>ELO Rating</th>
-            <th>W</th>
-            <th>L</th>
-            <% if @game.allow_ties %>
-                <th>T</th>
-            <% end %>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
-        </tbody>
-      </table>
-      <%= link_to "View All", game_ratings_path(@game) %>
-    </div>
-  </div>
 
   <div class="row">
     <h2>Progress</h2>
