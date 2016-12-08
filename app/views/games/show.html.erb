@@ -14,15 +14,15 @@
   <div class="row-fluid">
       <div class="col-md-6">
         <h2>Player Ladder</h2>
-        <table id='ratings'>
+        <table id='ratings' class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
           <thead>
             <tr>
-              <th>Player</th>
-              <th>ELO Rating</th>
-              <th>W</th>
-              <th>L</th>
+              <th class="mdl-data-table__cell--non-numeric">Player</th>
+              <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
+              <th class="mdl-data-table__cell--non-numeric">W</th>
+              <th class="mdl-data-table__cell--non-numeric">L</th>
               <% if @game.allow_ties %>
-                  <th>T</th>
+                  <th class="mdl-data-table__cell--non-numeric">T</th>
               <% end %>
             </tr>
           </thead>
