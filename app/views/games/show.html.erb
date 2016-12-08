@@ -17,13 +17,10 @@
         <table id='ratings' class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
           <thead>
             <tr>
-              <th class="mdl-data-table__cell">Player</th>
+              <th class="mdl-data-table__cell--non-numeric">Player</th>
               <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
               <th class="mdl-data-table__cell--non-numeric">W</th>
               <th class="mdl-data-table__cell--non-numeric">L</th>
-              <% if @game.allow_ties %>
-                  <th class="mdl-data-table__cell--non-numeric">T</th>
-              <% end %>
             </tr>
           </thead>
           <tbody>
