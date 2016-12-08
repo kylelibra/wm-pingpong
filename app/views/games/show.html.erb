@@ -4,14 +4,14 @@
   <section class="action-buttons">
     <%= link_to 'Edit', edit_game_path(@game), class: "btn" %>
     <% if @game.results.empty? %>
-      <%= link_to "Delete", game_path(@game), method: :delete, confirm: "Are you sure?", class: "btn btn-danger" %>
+      <%= link_to "Delete", game_path(@game), method: :delete, confirm: "Are you sure?", class: "btn btn-danger btn-small" %>
     <% end %>
   </section>
 
   <div class="row-fluid">
     <div class="span8">
-      <h2>Recent Results</h2>
-      <%= link_to "Add Result", new_game_result_path(@game), class: "btn btn-primary" %>
+      <h2>Recent Results</h2> <%= link_to "Add Score", new_game_result_path(@game), class: "btn btn-primary btn-small" %>
+      
 
       <% if @game.recent_results.any? %>
         <%= render partial: 'shared/results', object: @game.recent_results, locals: {show_game: false} %>
@@ -27,7 +27,7 @@
         <thead>
           <tr>
             <th>Player</th>
-            <th>Rating</th>
+            <th>ELO Rating</th>
             <th>W</th>
             <th>L</th>
             <% if @game.allow_ties %>
