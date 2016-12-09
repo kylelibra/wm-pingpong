@@ -1,18 +1,17 @@
-
-
+<!-- Wide card with share menu button -->
 <style>
-.demo-card-square.mdl-card {
+.demo-card-wide.mdl-card {
   width: auto;
 }
-.demo-card-square > .mdl-card__title {
+.demo-card-wide > .mdl-card__title {
   color: #fff;
+  height: 176px;
   background:
-    url('../assets/images/obama.png') bottom right 15% no-repeat #fc9423;
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
 }
-.mdl-layout__header {
-  background-color: #fc9423;
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
 }
-
 </style>
 
 <!-- Always shows a header, even in smaller screens. -->
@@ -32,6 +31,7 @@
       <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4">View Rankings</a>
       <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/results/new">Add Scores</a>
       <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/players/new">Add Players</a>
+      <a class="mdl-navigation__link" href="">View Admin</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -42,7 +42,7 @@
 <br><br><br>
 
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col">
+  <div class="mdl-cell mdl-cell--8-col">
     
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title">
@@ -76,7 +76,8 @@
     </div>
 
   </div>
-  
+</div>
+<div class="mdl-grid">
   <div class="mdl-cell mdl-cell--8-col">
     
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
