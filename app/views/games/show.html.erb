@@ -40,7 +40,7 @@
 
 <br><br><br>
 
-<h1><%= @game.name %><%= link_to 'Edit', edit_game_path(@game), class: "btn btn-warning btn-sm" %></h1>
+<h1><%= @game.name %></h1>
 
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--6-col">
@@ -64,13 +64,10 @@
             <%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
           </tbody>
         </table>
-        <%= link_to "View All", game_ratings_path(@game) %>
 
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Get Started
-        </a>
+        <%= link_to "View All", game_ratings_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -139,7 +136,9 @@
 
 
 
-
+<!-- bring back to edit games
+<%= link_to 'Edit', edit_game_path(@game), class: "btn btn-warning btn-sm" %>
+-->
 
   <section class="action-buttons">
     <% if @game.results.empty? %>
