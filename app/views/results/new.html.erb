@@ -32,13 +32,13 @@
                         <%= select "result[teams][#{index}]", :relation, ["defeats", "ties"], {} %>
                       <% else %>
                         <%= hidden_field_tag "result[teams][#{index}][relation]", :defeats, {} %>
-                        Defeats:
+                        <br>Defeats:<br>
                       <% end %>
                     <% end %>
                   <% end %>
 
-                  <div class='form-actions'>
-                    <%= f.submit class: "btn btn-primary", value: 'Save Result' %>
+                  <div class='form-actions'><br>
+                    <%= f.submit class: "btn btn-primary", value: 'Save Result' %><br>
                   </div>
                 <% end %>
 
