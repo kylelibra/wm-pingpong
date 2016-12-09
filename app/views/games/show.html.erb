@@ -32,7 +32,6 @@
               <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
               <th class="mdl-data-table__cell--non-numeric">W</th>
               <th class="mdl-data-table__cell--non-numeric">L</th>
-              <th class="mdl-data-table__cell--non-numeric">T</th>
             </tr>
           </thead>
           <tbody>
@@ -62,9 +61,6 @@
         <h2 class="mdl-card__title-text">Recent Results</h2>
       </div>
       <div class="mdl-card__supporting-text">
-
-       
-      
 
       <% if @game.recent_results.any? %>
         <%= render partial: 'shared/results', object: @game.recent_results, locals: {show_game: false} %>
