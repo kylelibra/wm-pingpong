@@ -23,7 +23,7 @@
 
                 <%= form_for [@game, @result], html: {id: "form-results"} do |f| %>
                   <%= f.error_messages %>
-
+                  Player:
                   <% @result.teams.each.with_index do |team, index| %>
                     <%= select "result[teams][#{index}]", "players", player_options, {include_blank: ''}, class: "players", multiple: @game.max_number_of_players_per_team != 1, "data-placeholder" => "Team #{index + 1}" %>
 
@@ -32,26 +32,24 @@
                         <%= select "result[teams][#{index}]", :relation, ["defeats", "ties"], {} %>
                       <% else %>
                         <%= hidden_field_tag "result[teams][#{index}][relation]", :defeats, {} %>
-                        <br>Defeats:<br>
+                        <br>Defeated:<br>
                       <% end %>
                     <% end %>
                   <% end %>
 
-                  <div class='form-actions'><br>
-                    <%= f.submit class: "btn btn-primary", value: 'Save Result' %><br>
+                  
+
+
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class='form-actions'><br>
+                    <%= f.submit class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect", value: 'Save Result' %><br>
                   </div>
                 <% end %>
 
                 <%= javascript_tag do %>
                   $(".players").chosen();
                 <% end %>
-
-
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://wm-pingpong.herokuapp.com/games/4">
-              Submit Score
-            </a>
           </div>
       </div>
   </div>
