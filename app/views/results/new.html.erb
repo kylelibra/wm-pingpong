@@ -23,7 +23,7 @@
 
                 <%= form_for [@game, @result], html: {id: "form-results"} do |f| %>
                   <%= f.error_messages %>
-                  Player:
+                  Player:<br>
                   <% @result.teams.each.with_index do |team, index| %>
                     <%= select "result[teams][#{index}]", "players", player_options, {include_blank: ''}, class: "players", multiple: @game.max_number_of_players_per_team != 1, "data-placeholder" => "Team #{index + 1}" %>
 
@@ -35,14 +35,15 @@
                         <br>Defeated:<br>
                       <% end %>
                     <% end %>
-                  <% end %>
+                  <% end %><br><br><br><br><br>
+                  
 
                   
 
 
           </div>
           <div class="mdl-card__actions mdl-card--border">
-            <div class='form-actions'><br>
+            <div class='form-actions'>
                     <%= f.submit class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect", value: 'Save Result' %><br>
                   </div>
                 <% end %>

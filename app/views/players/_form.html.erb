@@ -1,29 +1,61 @@
-<%= form_for @player, html: {class: "form-horizontal"} do |f| %>
-  <%= f.error_messages %>
+<style>
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/images/obama.png') bottom right 15% no-repeat #46B6AC;
+}
+</style>
 
-  <h1>Player</h1>
-  
-  <div class="control-group">
-    <%= f.label :name, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :name, class: "input-xlarge" %>
-    </div>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col">
+
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Add New Player</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+
+
+        <%= form_for @player, html: {class: "form-horizontal"} do |f| %>
+          <%= f.error_messages %>
+
+          
+          <div class="control-group">
+            <%= f.label :name, class: "control-label" %>
+            <div class="controls">
+              <%= f.text_field :name, class: "input-xlarge" %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <%= f.label :email, class: "control-label" %>
+            <div class="controls">
+              <%= f.text_field :email, class: "input-xlarge" %>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit class: "btn btn-primary" %>
+            <%= link_to "Cancel", root_path, class: "btn btn-warning" %>
+          </div>
+
+          <small class="description attribution">
+            Avatar provided by <a href="http://gravatar.com/">Gravatar</a>, a global avatar service.
+          </small>
+
+        <% end %>
+
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://wm-pingpong.herokuapp.com/games/4">
+          View Rankings
+        </a>
+      </div>
+        </div>
   </div>
-
-  <div class="control-group">
-    <%= f.label :email, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :email, class: "input-xlarge" %>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit class: "btn btn-primary" %>
-    <%= link_to "Cancel", root_path, class: "btn btn-warning" %>
-  </div>
-
-  <small class="description attribution">
-    Avatar provided by <a href="http://gravatar.com/">Gravatar</a>, a global avatar service.
-  </small>
-
-<% end %>
+</div>
