@@ -63,7 +63,7 @@
       </div>
       <div class="mdl-card__supporting-text">
 
-       <%= link_to "Add Score", new_game_result_path(@game), class: "btn btn-primary btn-sm" %>
+       
       
 
       <% if @game.recent_results.any? %>
@@ -74,9 +74,7 @@
 
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Get Started
-        </a>
+        <%= link_to "Add Score", new_game_result_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
