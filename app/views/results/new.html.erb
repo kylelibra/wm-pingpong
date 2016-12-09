@@ -1,3 +1,5 @@
+
+
 <style>
 .demo-card-square.mdl-card {
   width: 320px;
@@ -6,9 +8,39 @@
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background:
-    url('../assets/images/obama.png') bottom right 15% no-repeat #46B6AC;
+    url('../assets/images/obama.png') bottom right 15% no-repeat #fc9423;
 }
+.mdl-layout__header {
+  background-color: #fc9423;
+}
+
 </style>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Work Market Ping Pong</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Navigate</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/">Home</a>
+      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4">View Rankings</a>
+      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/results/new">Add Scores</a>
+      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/players/new">Add Players</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+  </main>
+</div>
+
+<br><br><br>
 
 
 <div class="mdl-grid">
