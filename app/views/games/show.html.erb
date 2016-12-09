@@ -1,3 +1,64 @@
+<style>
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+</style>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    
+
+    <div class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Update</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+      
+       <h2>Player Ladder</h2>
+        <table id='ratings' class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Player</th>
+              <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
+              <th class="mdl-data-table__cell--non-numeric">W</th>
+              <th class="mdl-data-table__cell--non-numeric">L</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
+          </tbody>
+        </table>
+        <%= link_to "View All", game_ratings_path(@game) %>
+      </div> 
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Updates
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="row-fluid">
     <div class="col-md-12">
@@ -13,22 +74,7 @@
 
   <div class="row-fluid">
       <div class="col-md-6">
-        <h2>Player Ladder</h2>
-        <table id='ratings' class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-          <thead>
-            <tr>
-              <th class="mdl-data-table__cell--non-numeric">Player</th>
-              <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
-              <th class="mdl-data-table__cell--non-numeric">W</th>
-              <th class="mdl-data-table__cell--non-numeric">L</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
-          </tbody>
-        </table>
-        <%= link_to "View All", game_ratings_path(@game) %>
-      </div>
+        
 
 
     <div class="col-md-6">
