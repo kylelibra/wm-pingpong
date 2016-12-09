@@ -38,23 +38,20 @@
             </div>
           </div>
 
-          <div class="form-actions">
-            <%= f.submit class: "btn btn-primary" %>
-            <%= link_to "Cancel", root_path, class: "btn btn-warning" %>
-          </div>
-
           <small class="description attribution">
-            Avatar provided by <a href="http://gravatar.com/">Gravatar</a>, a global avatar service.
+            Avatars loaded automatically by <a href="http://gravatar.com/">Gravatar</a>, a global avatar service. Work emails are used for creation, if work email is found to have an image it will load automatically.
           </small>
-
-        <% end %>
 
 
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://wm-pingpong.herokuapp.com/games/4">
-          View Rankings
-        </a>
+
+          <div class="form-actions">
+            <%= f.submit class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+          </div>
+
+        <% end %>
+
       </div>
         </div>
   </div>
