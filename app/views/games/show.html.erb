@@ -14,6 +14,32 @@
 }
 </style>
 
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Work Market Ping Pong</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Navigate</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">View Rankings</a>
+      <a class="mdl-navigation__link" href="">Add Scores</a>
+      <a class="mdl-navigation__link" href="">Add Players</a>
+      <a class="mdl-navigation__link" href="">View Admin</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+  </main>
+</div>
+
+<br><br><br>
+
 <h1><%= @game.name %><%= link_to 'Edit', edit_game_path(@game), class: "btn btn-warning btn-sm" %></h1>
 
 <div class="mdl-grid">
