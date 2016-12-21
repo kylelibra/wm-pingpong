@@ -7,7 +7,7 @@ Welcome to the ping pong app.
 Changelog
 ---------------------------
 
-v1.0
+v1.0  
 -Started changelog  
 -Deployed to Heroku instance  
 -Basic functionality works, mostly  
