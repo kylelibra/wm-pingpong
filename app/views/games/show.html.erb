@@ -7,7 +7,7 @@
   color: #fff;
   height: 64px;
   background:
-    url('pingpong2.jpg') bottom right 15% no-repeat #fc9423;
+	url('pingpong2.jpg') bottom right 15% no-repeat #fc9423;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -20,24 +20,24 @@
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Work Market Ping Pong</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-    </div>
+	<div class="mdl-layout__header-row">
+	  <!-- Title -->
+	  <span class="mdl-layout-title">Work Market Ping Pong</span>
+	  <!-- Add spacer, to align navigation to the right -->
+	  <div class="mdl-layout-spacer"></div>
+	</div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Navigate</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/">Home</a>
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4">View Rankings</a>
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/results/new">Add Scores</a>
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/players/new">Add Players</a>
-    </nav>
+	<span class="mdl-layout-title">Navigate</span>
+	<nav class="mdl-navigation">
+	  <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/">Home</a>
+	  <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4">View Rankings</a>
+	  <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/results/new">Add Scores</a>
+	  <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/players/new">Add Players</a>
+	</nav>
   </div>
   <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
+	<div class="page-content"><!-- Your content goes here --></div>
   </main>
 </div>
 
@@ -46,27 +46,27 @@
 
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--12-col">
-    
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Rankings Over Time</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
+	
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	  <div class="mdl-card__title">
+		<h2 class="mdl-card__title-text">Rankings Over Time</h2>
+	  </div>
+	  <div class="mdl-card__supporting-text">
 
-        <%= line_chart @chart_data, min: nil, max: nil %>
+		<%= line_chart @chart_data, min: nil, max: nil %>
 
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Export Results
-        </a>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
-      </div>
-    </div>    
+	  </div>
+	  <div class="mdl-card__actions mdl-card--border">
+		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		  Export Results
+		</a>
+	  </div>
+	  <div class="mdl-card__menu">
+		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		  <i class="material-icons">share</i>
+		</button>
+	  </div>
+	</div>    
 
   </div>
 </div>
@@ -75,64 +75,64 @@
 
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--5-col">
-    
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Ladder</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
+	
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	  <div class="mdl-card__title">
+		<h2 class="mdl-card__title-text">Ladder</h2>
+	  </div>
+	  <div class="mdl-card__supporting-text">
 
-        <table id='ratings' class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-          <thead>
-            <tr>
-              <th class="mdl-data-table__cell--non-numeric">Player</th>
-              <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
-              <th class="mdl-data-table__cell--non-numeric">W</th>
-              <th class="mdl-data-table__cell--non-numeric">L</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
-          </tbody>
-        </table>
+		<table id='ratings' class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+		  <thead>
+			<tr>
+			  <th class="mdl-data-table__cell--non-numeric">Player</th>
+			  <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
+			  <th class="mdl-data-table__cell--non-numeric">W</th>
+			  <th class="mdl-data-table__cell--non-numeric">L</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<%= render partial: 'rating', collection: @game.all_ratings.select(&:active?) %>
+		  </tbody>
+		</table>
 
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <%= link_to "View All", game_ratings_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
-      </div>
-    </div>
+	  </div>
+	  <div class="mdl-card__actions mdl-card--border">
+		<%= link_to "View All", game_ratings_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+	  </div>
+	  <div class="mdl-card__menu">
+		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		  <i class="material-icons">share</i>
+		</button>
+	  </div>
+	</div>
 
   </div>
 
   <div class="mdl-cell mdl-cell--7-col">
-    
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Recent Results</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
+	
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	  <div class="mdl-card__title">
+		<h2 class="mdl-card__title-text">Recent Results</h2>
+	  </div>
+	  <div class="mdl-card__supporting-text">
 
-      <% if @game.recent_results.any? %>
-        <%= render partial: 'shared/results', object: @game.recent_results, locals: {show_game: false} %>
-      <% else %>
-        <span>No results, play some games!</span>
-      <% end %>
+	  <% if @game.recent_results.any? %>
+		<%= render partial: 'shared/results', object: @game.recent_results, locals: {show_game: false} %>
+	  <% else %>
+		<span>No results, play some games!</span>
+	  <% end %>
 
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <%= link_to "Add Score", new_game_result_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
-      </div>
-    </div>
+	  </div>
+	  <div class="mdl-card__actions mdl-card--border">
+		<%= link_to "Add Score", new_game_result_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+	  </div>
+	  <div class="mdl-card__menu">
+		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		  <i class="material-icons">share</i>
+		</button>
+	  </div>
+	</div>
 
   </div>
 </div>
@@ -146,8 +146,8 @@
 -->
 
   <section class="action-buttons">
-    <% if @game.results.empty? %>
-      <%= link_to "Delete", game_path(@game), method: :delete, confirm: "Are you sure?", class: "btn btn-danger btn-sm" %>
-    <% end %>
+	<% if @game.results.empty? %>
+	  <%= link_to "Delete", game_path(@game), method: :delete, confirm: "Are you sure?", class: "btn btn-danger btn-sm" %>
+	<% end %>
   </section>
 
