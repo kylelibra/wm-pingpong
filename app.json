@@ -6,32 +6,33 @@
   "success_url": "/",
   "addons": ["heroku-postgresql:hobby-dev"],
   "env": {
-    "RAILS_ENV": "production",
-    "COOKIE_SECRET": {
-      "description": "This gets generated",
-      "generator": "secret"
-    },
-    "SETUP_BY": {
-      "description": "Who initiated this setup",
-      "value": "",
-      "required": false
-    },
-    "BASIC_AUTH": {
-      "description": "Would you like basic authentication? (true/false)",
-      "value": "false"
-    },
-    "BASIC_AUTH_USER": {
-      "description": "If basic auth is enabled, set your username, otherwise leave blank",
-      "value": "",
-      "required": false
-    },
-    "BASIC_AUTH_PASSWORD": {
-      "description": "If basic auth is enabled, set your password, otherwise leave blank",
-      "value": "",
-      "required": false
-    }
+	"RAILS_ENV": "production",
+	"COOKIE_SECRET": {
+	  "description": "This gets generated",
+	  "generator": "secret"
+	},
+	"SETUP_BY": {
+	  "description": "Who initiated this setup",
+	  "value": "",
+	  "required": false
+	},
+	"BASIC_AUTH": {
+	  "description": "Would you like basic authentication? (true/false)",
+	  "value": "false"
+	},
+	"BASIC_AUTH_USER": {
+	  "description": "If basic auth is enabled, set your username, otherwise leave blank",
+	  "value": "",
+	  "required": false
+	},
+	"BASIC_AUTH_PASSWORD": {
+	  "description": "If basic auth is enabled, set your password, otherwise leave blank",
+	  "value": "",
+	  "required": false
+	}
   },
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+	"postdeploy": "bundle exec rake db:migrate"
   }
 }
+
