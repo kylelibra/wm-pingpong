@@ -17,6 +17,14 @@ v1.0
 -Basic functionality works, mostly  
 
 
+Top feature requests
+---------------------------
+
+-Score decay (every 14 days subtract 10)  
+-Only update total ladder ranking once every six weeks  
+-Add dispute arbitration  
+-Add some official rules  
+
 How to submit pull requests
 ---------------------------
 
