@@ -7,6 +7,10 @@ Welcome to the ping pong app.
 Changelog
 ---------------------------
 
+v1.0.1  
+-Ladder ranking moved to its own page  
+-Adds ladder ranking as new menu item  
+
 v1.0  
 -Started changelog  
 -Deployed to Heroku instance  

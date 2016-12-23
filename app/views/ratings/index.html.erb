@@ -1,45 +1,46 @@
-<!-- Wide card with share menu button -->
 <style>
-.demo-card-wide.mdl-card {
-  width: auto;
+	.demo-card-square.mdl-card {
+		width: 320px;
+		height: 320px;
 }
-.demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 176px;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #fc9423;
-}
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
+.demo-card-square > .mdl-card__title {
+	color: #fff;
+	background:
+	url('default.png') bottom right 15% no-repeat #fc9423;
 }
 .mdl-layout__header {
-  background-color: #fc9423;
+	background-color: #fc9423;
 }
+
 </style>
 
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Work Market Ping Pong</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Navigate</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/">Home</a>
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4">View Rankings</a>
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/results/new">Add Scores</a>
-      <a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/players/new">Add Players</a>
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
-  </main>
-</div>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<!-- Title -->
+				<span class="mdl-layout-title">Work Market Ping Pong</span>
+				<!-- Add spacer, to align navigation to the right -->
+				<div class="mdl-layout-spacer"></div>
+			</div>
+		</header>
+
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">Navigate</span>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/">Home</a>
+				<a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/ratings">View Ladder Rankings</a>
+				<a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4">View Recent Scores</a>
+				<a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/games/4/results/new">Add Scores</a>
+				<a class="mdl-navigation__link" href="https://wm-pingpong.herokuapp.com/players/new">Add Players</a>
+			</nav>
+	</div>
+	
+	<main class="mdl-layout__content">
+		<div class="page-content"><!-- Your content goes here --></div>
+	</main>
+	
+	</div>
 
 <br><br><br>
 
@@ -47,42 +48,51 @@
 
 
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--5-col">
-    
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Ladder</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
+	<div class="mdl-cell mdl-cell--5-col">
 
-            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-      <thead>
-        <tr>
-          <th class="mdl-data-table__cell--non-numeric">Player</th>
-          <th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
-          <th class="mdl-data-table__cell--non-numeric"><abbr title='Wins'>W</abbr></th>
-          <th class="mdl-data-table__cell--non-numeric"><abbr title='Losses'>L</abbr></th>
-          <% if @game.allow_ties %>
-            <th class="mdl-data-table__cell--non-numeric"><abbr title='Ties'>T</abbr></th>
-          <% end %>
-        </tr>
-      </thead>
+		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+			<div class="mdl-card__title">
 
-      <tbody>
-        <%= render partial: 'games/rating', collection: @game.all_ratings %>
-      </tbody>
-    </table>
+				<h2 class="mdl-card__title-text">Ladder</h2>
+			</div>
 
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <%= link_to "Add Score", new_game_result_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
-      </div>
-    </div>
+			<div class="mdl-card__supporting-text">
 
-  </div>
-  </div>
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+				
+					<thead>
+						<tr>
+							<th class="mdl-data-table__cell--non-numeric">Player</th>
+							<th class="mdl-data-table__cell--non-numeric">ELO Rating</th>
+							<th class="mdl-data-table__cell--non-numeric"><abbr title='Wins'>W</abbr></th>
+							<th class="mdl-data-table__cell--non-numeric"><abbr title='Losses'>L</abbr></th>
+							<% if @game.allow_ties %>
+							<th class="mdl-data-table__cell--non-numeric"><abbr title='Ties'>T</abbr></th>
+							<% end %>
+						</tr>
+					</thead>
+
+					<tbody>
+					<%= render partial: 'games/rating', collection: @game.all_ratings %>
+					</tbody>
+				
+				</table>
+
+			</div>
+
+			<div class="mdl-card__actions mdl-card--border">
+				
+				<%= link_to "Add Score", new_game_result_path(@game), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+
+			</div>
+
+			<div class="mdl-card__menu">
+				<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+					<i class="material-icons">share</i>
+				</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
