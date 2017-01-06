@@ -8,6 +8,9 @@ Changelog
 ---------------------------
 
 v1.0.1  
+-Cleaned up duplicate users
+
+v1.0.1  
 -Ladder ranking moved to its own page  
 -Adds ladder ranking as new menu item  
 
@@ -24,6 +27,7 @@ Top feature requests
 -Only update total ladder ranking once every six weeks  
 -Add dispute arbitration  
 -Add some official rules  
+
 
 How to submit pull requests
 ---------------------------
