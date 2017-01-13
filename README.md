@@ -7,6 +7,10 @@ Welcome to the ping pong app.
 Changelog
 ---------------------------
 
+v1.0.2  
+-Hides the chart data until I can find a better solution  
+-Adds wins and losses columns back to overall ladder
+
 v1.0.1  
 -Cleaned up duplicate users
 
